@@ -106,26 +106,3 @@ For questions:
 mmvr@example.com
 
 License: MIT © 2023 MMVR1337
-
----
-
-1. **Для Doxygen**:  
-   Добавьте в корень `Doxyfile`:  
-   ```ini
-   PROJECT_NAME = "Loader-WebServer"
-   OUTPUT_DIRECTORY = ./docs
-   INPUT = ./include ./src
-
-    Для CI/CD:
-    Пример .github/workflows/build.yml:
-    yaml
-
-name: Windows Build
-on: [push]
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: cmake -B build
-      - run: cmake --build build --config Release
